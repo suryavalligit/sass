@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS From Scratch</title>
+    <link rel="stylesheet" href="css/mainstyle.css">
+</head>
+
+<body>
+    <section>
+        <h1>SASS From Scratch</h1>
+        <div class="welcome-card">
+            <h2>SASS Variables</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc urna, faucibus non aliquam
+                faucibus, cursus at dolor. Mauris urna tellus, rutrum at nunc placerat, facilisis fringilla nunc.
+                Pellentesque a vestibulum dolor. Maecenas euismod tristique ligula, sed laoreet ex fermentum aliquet.
+            </p>
+            <button class="btn">Learn More</button>
+            <br>
+            <br>
+            <img src="images/image-0.png" />
+            <br>
+            <img src="images/image-1.png" />
+        </div>
+
+        <div class="welcome-card">
+            <h2>SASS Datatypes (Numbers, Strings, Colors, Lists)</h2>
+            <h3>SASS Datatypes - Numbers</h3>
+            <p>Numbers, which may or may not have units, like 12 or 100px.</p>
+            <br>
+            <h3>SASS Datatypes - Strings</h3>
+            <p>
+                Strings, which may or may not have quotes, like "Helvetica Neue" or bold.
+            </p>
+            <br>
+            <h3>SASS Datatypes - Colors</h3>
+            <p>Colors, which can be referred to by their hex representation or by name, like #c6538c or blue, or
+                returned from functions, like rgb(107, 113, 127) or hsl(210, 100%, 20%).</p>
+            <br>
+            <h3>SASS Datatypes - Lists</h3>
+            <p>Lists of values, which may be separated by spaces or commas and which may be enclosed in square brackets
+                or no brackets at all, like 1.5em 1em 0 2em, Helvetica, Arial, sans-serif, or [col1-start].</p>
+            <br>
+            <h3>SASS Datatypes - Boolean</h3>
+            <p>The boolean values true and false.</p>
+            <br>
+            <h3>SASS Datatypes - Null</h3>
+            <p>The singleton null value.</p>
+            <img src="images/image-2.png" />
+            <br>
+            <img src="images/image-3.png" />
+        </div>
+        <div class="nestclass">
+            <h2 class="nestclass_title">SASS Nested Styles</h2>
+            <p class="nestclass_desc">It is advised to follow BEM(Block Element Module) CSS pattern. To maintain the
+                SASS code in optimized
+                way.
+            </p>
+            <p class="nestclass_desc">It means that write nested styles by using Class[name].</p>
+            <p class="nestclass_desc">Class[name] must be in BEM pattern.</p>
+            <p class="nestclass_desc">Example:
+                <br>
+                Parent div classname : welcome-card,
+                <br>
+                Inner title classname : welcome-card_title,
+                <br>
+                Inner description classname : welcome-card_desc.
+            </p>
+            <img src="images/image-4.png" />
+            <br>
+            <img src="images/image-5.png" />
+        </div>
+        <div class="welcome-card">
+            <h2>SASS Interpolation</h2>
+            <p>What is SASS Interpolation?</p>
+            <p>SASS Interpolation is a technique to include the result of any SASS Script expression into the stylesheet
+                wherever required using #{} .</p>
+            <p><b>To include an expression's result or variable's value in your stylesheet we use the interpolation
+                    technique</b></p>
+            <p>Interpolation Syntax : <b>#{ }</b>
+            </p>
+            <div class="profile-picture"></div>
+            <br>
+            <img src="images/image-6.png" />
+        </div>
+        <div class="welcome-card">
+            <h2>SASS @mixin and @include</h2>
+            <button class="mix-btn">Default Button</button>
+            <button class="mix-btn btn-prim">Primary Button</button>
+            <button class="mix-btn btn-sec">Secondary Button</button>
+            <button class="mix-btn btn-dark">Dark Button</button>
+            <br>
+            <br>
+            <img src="images/image-7.png" />
+            <br>
+            <img src="images/image-8.png" />
+        </div>
+    </section>
+    <section class="welcome-card func-code">
+        <h2>SASS @function</h2>
+        <br>
+        <img src="images/image-9.png" />
+    </section>
+    <section class="welcome-card">
+        <h2>SASS @Extend</h2>
+        <div class="alert">
+            <h4>This is default message</h4>
+            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+        </div>
+        <div class="alert success">
+            <h4>This is success message</h4>
+            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+        </div>
+        <div class="alert error">
+            <h4>This is error message</h4>
+            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+        </div>
+        <br>
+        <img src="images/image-10.png" />
+        <br>
+        <img src="images/image-11.png" />
+        <br>
+        <img src="images/image-12.png" />
+    </section>
+    <section class="welcome-card">
+        <h2>SASS Build-In Modules</h2>
+        <p>Equality Operator</p>
+        <br>
+        <img src="images/image-14.png" />
+        <br>
+        <br>
+        <p>Relational Operator</p>
+        <br>
+        <img src="images/image-15.png" />
+        <br>
+        <br>
+        <p>Arithmetic Operator</p>
+        <br>
+        <img src="images/image-16.png" />
+        <br>
+        <br>
+        <p>String Operator</p>
+        <br>
+        <img src="images/image-17.png" />
+        <br>
+        <br>
+        <p><b>In Boolean Operators - The values false and null are falsey other than these are truth values.</b></p>
+        <br>
+        <p>Order of operations</p>
+        <br>
+        <img src="images/image-18.png" />
+    </section>
+    <section class="welcome-card ifelse">
+        <h2>SASS if-else</h2>
+        <p class="ifelse-textcolor">This is a smart notification</p>
+        <div class="ifelse-exerc">
+            <div>
+                <img src="images/image-19.png" class="square-av" />
+            </div>
+            <div>
+                <p>Lorem Ipsum</p>
+            </div>
+        </div>
+        <br>
+        <img src="images/image-20.png" />
+    </section>
+    <section class="welcome-card">
+        <h2>SASS @for loop</h2>
+        <div class="for-style">
+            <h2>Lorem Ipsum #2</h2>
+            <h3>Lorem Ipsum #3</h3>
+            <h4>Lorem Ipsum #4</h4>
+            <h5>Lorem Ipsum #5</h5>
+            <h6>Lorem Ipsum #6</h6>
+        </div>
+        <br>
+        <img src="images/image-21.png" />
+    </section>
+    <section class="welcome-card">
+        <h2>SASS @each loop</h2>
+        <div class="each-style">
+            <h3>Lorem Ipsum Heading</h3>
+            <p class="m-1">Lorem Ipsum, dolor sit inspect. Lorem Ipsum, dolor sit inspect. <b>(m-1)</b></p>
+            <p class="m-2">Lorem Ipsum, dolor sit inspect. Lorem Ipsum, dolor sit inspect. <b>(m-2)</p>
+            <p class="m-3">Lorem Ipsum, dolor sit inspect. Lorem Ipsum, dolor sit inspect. <b>(m-3)</p>
+            <p class="m-4">Lorem Ipsum, dolor sit inspect. Lorem Ipsum, dolor sit inspect. <b>(m-4)</p>
+            <p class="m-5">Lorem Ipsum, dolor sit inspect. Lorem Ipsum, dolor sit inspect. <b>(m-5)</p>
+            <p class="m-6">Lorem Ipsum, dolor sit inspect. Lorem Ipsum, dolor sit inspect. <b>(m-6)</p>
+        </div>
+        <br>
+        <img src="images/image-22.png" />
+        <br>
+        <img src="images/image-23.png" />
+    </section>
+    <section class="welcome-card">
+        <h2>SASS @while loop</h2>
+        <br>
+        <img src="images/image-24.png" />
+    </section>
+</body>
+
+</html>

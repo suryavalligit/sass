@@ -1,0 +1,7 @@
+@use "../abstracts/index" as m;
+
+h1 {
+    font-size: m.$font-size-h1;
+    text-align: m.$textaligncenter;
+    margin: 40px;
+}

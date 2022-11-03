@@ -1,0 +1,23 @@
+// Global 
+@import "./base/global";
+
+// Layouts
+@import "./layouts/header";
+@import "./layouts/footer";
+
+//Pages
+@import "./pages/home";
+
+.sassnav-menus {
+    text-align: center;
+
+    a {
+        font-size: 32px;
+        background-color: #fff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 20px;
+        display: inline-block;
+    }
+}

@@ -1,0 +1,515 @@
+/* 2. heading style - It displays on compiled css file also  */
+/*! 3. heading style - It displays on scss file, css file and compressed css file also */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Jost&display=swap");
+
+/*CSS Variables Example-start
+
+:root {
+    --brand-color: #ee82eea6;
+}
+
+CSS Variables Example-end*/
+/*SASS Variables*/
+/*SASS Datatypes Start*/
+h4 {
+  color: blue;
+}
+
+/*SASS Datatypes End*/
+/*SASS Interpolation Start*/
+/* $inameap-color : #ee82eea6; -- Displays Output in CSS as #ee82eea6; */
+/* App-color : $inameap-color; -- Displays Output as error as CSS; */
+/* App-color : $inameap-color; -- Displays Output in CSS as #ee82eea6;  */
+.profile-picture {
+  background-image: url("https://github.com/suryavalligit.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 300px;
+  height: 300px;
+}
+
+/*SASS Interpolation End*/
+/*default-value*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: var(--brand-color); ---css variable example */
+  background-color: rgba(238, 130, 238, 0.6509803922);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+  padding-bottom: 20px;
+  padding-top: 70px;
+  text-align: center;
+}
+
+.welcome-card {
+  background-color: #fff;
+  padding: 20px 30px;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+.welcome-card p {
+  font-size: 18px;
+  line-height: 24px;
+  padding-bottom: 10px;
+  font-family: "Jost", sans-serif;
+}
+
+.welcome-card .btn {
+  margin-top: 10px;
+  /* $btn-color: hotpink !global; -- it is a global flag to make this change apply to all the places where this variable used */
+  background-color: hotpink;
+  border: 1px solid rgba(198, 83, 140, 0.88);
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 15px 30px;
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+}
+
+.welcome-card h2 {
+  font-family: "Jost", sans-serif;
+  padding-bottom: 10px;
+  font-size: 30px;
+  color: #e1137a;
+}
+
+.welcome-card ul {
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.nestclass {
+  background-color: #fff;
+  padding: 20px 30px;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+.nestclass_title {
+  font-family: "Jost", sans-serif;
+  padding-bottom: 10px;
+  font-size: 30px;
+  color: #e1137a;
+}
+
+.nestclass_desc {
+  font-size: 18px;
+  line-height: 24px;
+  padding-bottom: 10px;
+  font-family: "Jost", sans-serif;
+}
+
+/* @mixin and @include Start*/
+.mix-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: #000;
+}
+
+.mix-btn:focus {
+  outline: none;
+}
+
+.mix-btn.btn-prim {
+  background-color: #2196f3;
+}
+
+.mix-btn.btn-sec {
+  background-color: #4caf50;
+}
+
+.mix-btn.btn-dark {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #000;
+}
+
+.mix-btn.btn-dark:focus {
+  outline: none;
+}
+
+/* @mixin and @include End*/
+/* @function Start*/
+.func-code {
+  background-color: #57b070;
+}
+
+/* @function End*/
+/* @extend Start*/
+.alert,
+.alert.error,
+.alert.success {
+  padding: 10px 20px;
+  border: 1px solid #008eff;
+  border-radius: 5px;
+  background-color: #b1dcff;
+}
+
+.alert.success {
+  background-color: rgba(87, 176, 112, 0.42);
+  border: 1px solid rgba(87, 176, 112, 0.42);
+}
+
+.alert.error {
+  background-color: rgba(236, 100, 100, 0.5);
+  border: 1px solid rgba(236, 100, 100, 0.5);
+}
+
+/* @extend End*/
+.ifelse-textcolor {
+  color: orange;
+}
+
+.ifelse-exerc {
+  display: flex;
+  align-items: center;
+}
+
+.ifelse-exerc img {
+  padding-right: 20px;
+}
+
+.square-av {
+  width: 400px;
+  height: 400px;
+}
+
+.circle-av {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.for-style h1 {
+  font-size: 10px;
+  color: rgb(137, 14, 153);
+}
+
+.for-style h2 {
+  font-size: 20px;
+  color: rgb(63, 254, 144);
+}
+
+.for-style h3 {
+  font-size: 30px;
+  color: rgb(242, 127, 11);
+}
+
+.for-style h4 {
+  font-size: 40px;
+  color: rgb(152, 242, 26);
+}
+
+.for-style h5 {
+  font-size: 50px;
+  color: rgb(141, 85, 97);
+}
+
+.for-style h6 {
+  font-size: 60px;
+  color: rgb(76, 233, 132);
+}
+
+.each-style .m-1 {
+  margin: 1rem;
+  border: 1px solid red;
+}
+
+.each-style .p-1 {
+  padding: 1rem;
+  border: 1px solid red;
+}
+
+.each-style .mt-1 {
+  margin-top: 1rem !important;
+}
+
+.each-style .pt-1 {
+  padding-top: 1rem !important;
+}
+
+.each-style .mr-1 {
+  margin-right: 1rem !important;
+}
+
+.each-style .pr-1 {
+  padding-right: 1rem !important;
+}
+
+.each-style .mb-1 {
+  margin-bottom: 1rem !important;
+}
+
+.each-style .pb-1 {
+  padding-bottom: 1rem !important;
+}
+
+.each-style .ml-1 {
+  margin-left: 1rem !important;
+}
+
+.each-style .pl-1 {
+  padding-left: 1rem !important;
+}
+
+.each-style .m-2 {
+  margin: 2rem;
+  border: 1px solid red;
+}
+
+.each-style .p-2 {
+  padding: 2rem;
+  border: 1px solid red;
+}
+
+.each-style .mt-2 {
+  margin-top: 2rem !important;
+}
+
+.each-style .pt-2 {
+  padding-top: 2rem !important;
+}
+
+.each-style .mr-2 {
+  margin-right: 2rem !important;
+}
+
+.each-style .pr-2 {
+  padding-right: 2rem !important;
+}
+
+.each-style .mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+.each-style .pb-2 {
+  padding-bottom: 2rem !important;
+}
+
+.each-style .ml-2 {
+  margin-left: 2rem !important;
+}
+
+.each-style .pl-2 {
+  padding-left: 2rem !important;
+}
+
+.each-style .m-3 {
+  margin: 3rem;
+  border: 1px solid red;
+}
+
+.each-style .p-3 {
+  padding: 3rem;
+  border: 1px solid red;
+}
+
+.each-style .mt-3 {
+  margin-top: 3rem !important;
+}
+
+.each-style .pt-3 {
+  padding-top: 3rem !important;
+}
+
+.each-style .mr-3 {
+  margin-right: 3rem !important;
+}
+
+.each-style .pr-3 {
+  padding-right: 3rem !important;
+}
+
+.each-style .mb-3 {
+  margin-bottom: 3rem !important;
+}
+
+.each-style .pb-3 {
+  padding-bottom: 3rem !important;
+}
+
+.each-style .ml-3 {
+  margin-left: 3rem !important;
+}
+
+.each-style .pl-3 {
+  padding-left: 3rem !important;
+}
+
+.each-style .m-4 {
+  margin: 4rem;
+  border: 1px solid red;
+}
+
+.each-style .p-4 {
+  padding: 4rem;
+  border: 1px solid red;
+}
+
+.each-style .mt-4 {
+  margin-top: 4rem !important;
+}
+
+.each-style .pt-4 {
+  padding-top: 4rem !important;
+}
+
+.each-style .mr-4 {
+  margin-right: 4rem !important;
+}
+
+.each-style .pr-4 {
+  padding-right: 4rem !important;
+}
+
+.each-style .mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+.each-style .pb-4 {
+  padding-bottom: 4rem !important;
+}
+
+.each-style .ml-4 {
+  margin-left: 4rem !important;
+}
+
+.each-style .pl-4 {
+  padding-left: 4rem !important;
+}
+
+.each-style .m-5 {
+  margin: 5rem;
+  border: 1px solid red;
+}
+
+.each-style .p-5 {
+  padding: 5rem;
+  border: 1px solid red;
+}
+
+.each-style .mt-5 {
+  margin-top: 5rem !important;
+}
+
+.each-style .pt-5 {
+  padding-top: 5rem !important;
+}
+
+.each-style .mr-5 {
+  margin-right: 5rem !important;
+}
+
+.each-style .pr-5 {
+  padding-right: 5rem !important;
+}
+
+.each-style .mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.each-style .pb-5 {
+  padding-bottom: 5rem !important;
+}
+
+.each-style .ml-5 {
+  margin-left: 5rem !important;
+}
+
+.each-style .pl-5 {
+  padding-left: 5rem !important;
+}
+
+.each-style .m-6 {
+  margin: 6rem;
+  border: 1px solid red;
+}
+
+.each-style .p-6 {
+  padding: 6rem;
+  border: 1px solid red;
+}
+
+.each-style .mt-6 {
+  margin-top: 6rem !important;
+}
+
+.each-style .pt-6 {
+  padding-top: 6rem !important;
+}
+
+.each-style .mr-6 {
+  margin-right: 6rem !important;
+}
+
+.each-style .pr-6 {
+  padding-right: 6rem !important;
+}
+
+.each-style .mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.each-style .pb-6 {
+  padding-bottom: 6rem !important;
+}
+
+.each-style .ml-6 {
+  margin-left: 6rem !important;
+}
+
+.each-style .pl-6 {
+  padding-left: 6rem !important;
+}
+
+/* h1 {
+  font-size: 10px;
+} */
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 40px;
+}
+
+h5 {
+  font-size: 50px;
+}
+
+h6 {
+  font-size: 60px;
+}
+
+h7 {
+  font-size: 70px;
+}
+
+h8 {
+  font-size: 80px;
+}
+
+h9 {
+  font-size: 90px;
+}

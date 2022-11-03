@@ -1,0 +1,418 @@
+//SCSS comment formats 
+
+// 1. heading style - It displays only on scss file
+/* 2. heading style - It displays on compiled css file also  */
+/*! 3. heading style - It displays on scss file, css file and compressed css file also */
+
+@use 'sass:math';
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Jost&display=swap');
+
+
+
+/*CSS Variables Example-start
+
+:root {
+    --brand-color: #ee82eea6;
+}
+
+CSS Variables Example-end*/
+
+
+/*SASS Variables*/
+
+$brand-color : #ee82eea6;
+$base-color: #c6538c;
+$border-dark: rgba($base-color, 0.88);
+$font-josefin :'Josefin Sans',
+sans-serif;
+$font-jost : 'Jost',
+sans-serif;
+$base-padding: 10px;
+$base-margin: 10px;
+$h1-size: 40px;
+$h2-size: 30px;
+$btn-size: 14px;
+
+
+/*SASS Datatypes Start*/
+
+//number
+$num-pixel: 16px;
+$num-unit: 0.8;
+
+//strings
+$name: 'karl Hadwen';
+$name-together: 'Karl' + 'Hadwen';
+
+//color
+$color: lighten(#fff, 15%);
+$color-hexa: #998099;
+
+//boolean
+$bool-true: true;
+$bool-false: false;
+
+//null
+$null-set :null; // not empty the value, removes the particular css element.
+//(eg : background-color: $null-set; -> In css file, this css code gets removed.)
+
+//Lists
+$font-weight: "400", "500";
+
+//Maps
+$alert-colors: (
+    "primary": blue,
+    "success": green,
+    "danger": red,
+);
+
+h4 {
+    color: map-get($alert-colors, "primary");
+}
+
+/*SASS Datatypes End*/
+
+/*SASS Interpolation Start*/
+
+/* $inameap-color : #ee82eea6; -- Displays Output in CSS as #ee82eea6; */
+
+/* App-color : $inameap-color; -- Displays Output as error as CSS; */
+
+/* App-color : $inameap-color; -- Displays Output in CSS as #ee82eea6;  */
+
+$profile-picture : "suryavalligit";
+
+
+.profile-picture {
+    background-image: url('https://github.com/#{$profile-picture}.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+}
+
+/*SASS Interpolation End*/
+
+/*default-value*/
+$black: #000 !default;
+$border-radius: 5px !default;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: var(--brand-color); ---css variable example */
+    background-color: $brand-color;
+    font-family: $font-josefin;
+}
+
+h1 {
+    font-size: 30px;
+    padding-bottom: 20px;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.welcome-card {
+    background-color: #fff;
+    padding: 20px 30px;
+    margin: 40px;
+    border-radius: 10px;
+
+    p {
+        font-size: 18px;
+        line-height: 24px;
+        padding-bottom: 10px;
+        font-family: $font-jost;
+    }
+
+    .btn {
+        margin-top: 10px;
+        $btn-color: hotpink;
+        /* $btn-color: hotpink !global; -- it is a global flag to make this change apply to all the places where this variable used */
+        background-color: $btn-color;
+        border: 1px solid $border-dark;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        padding: 15px 30px;
+        cursor: pointer;
+        font-family: $font-josefin;
+        font-size: $btn-size;
+    }
+}
+
+.welcome-card {
+    h2 {
+        font-family: $font-jost; // variables
+        padding-bottom: $base-padding;
+        font-size: $h2-size;
+        $black: #e1137a; //variable scope - local scope
+        color: $black;
+    }
+
+    ul {
+        margin-bottom: 20px;
+        list-style-type: none;
+    }
+}
+
+.nestclass {
+    background-color: #fff;
+    padding: 20px 30px;
+    margin: 40px;
+    border-radius: 10px;
+
+    &_title {
+        font-family: $font-jost;
+        padding-bottom: $base-padding;
+        font-size: $h2-size;
+        $black: #e1137a;
+        color: $black;
+    }
+
+    &_desc {
+        font-size: 18px;
+        line-height: 24px;
+        padding-bottom: 10px;
+        font-family: $font-jost;
+    }
+}
+
+
+/* @mixin and @include Start*/
+
+@mixin btn($color) {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: $color;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.mix-btn {
+    @include btn($color: #000);
+
+    &.btn-prim {
+        background-color: #2196f3;
+    }
+
+    &.btn-sec {
+        background-color: #4caf50;
+    }
+
+    &.btn-dark {
+        @include btn($color: #fff);
+        background-color: #000;
+    }
+}
+
+/* @mixin and @include End*/
+
+/* @function Start*/
+
+@function themebrand-colors($variant: "primary") {
+    @return map-get($theme-colors, $variant);
+}
+
+$theme-colors :("primary": #57b070,
+    "accent" : orange);
+
+.func-code {
+    background-color: themebrand-colors("primary");
+}
+
+/* @function End*/
+
+/* @extend Start*/
+
+.alert {
+    padding: 10px 20px;
+    border: 1px solid #008eff;
+    border-radius: 5px;
+    background-color: #b1dcff;
+
+    &.success {
+        @extend .alert;
+        background-color: rgb(87 176 112 / 42%);
+        border: 1px solid rgb(87 176 112 / 42%);
+    }
+
+    &.error {
+        @extend .alert;
+        background-color: rgb(236 100 100 / 50%);
+        border: 1px solid rgb(236 100 100 / 50%);
+    }
+}
+
+/* @extend End*/
+
+// @error "This is error testing: #{themebrand-colors(" primary")}";
+
+// @warn "This is error testing: #{themebrand-colors(" primary")}";
+
+// @debug"This is error testing: #{themebrand-colors(" primary")}";
+
+//Equality Operator
+
+// $first-num : 1;
+// $second-num: 1;
+// $third-num: 2;
+
+// @debug "Result-1(equal 1 & 2): #{$first-num == $second-num}";
+// @debug "Result-2(equal 2 & 3): #{$second-num == $third-num}";
+// @debug "Result-3(notequal 1 & 2): #{$first-num != $second-num}";
+
+// //Relational Operator
+
+// @debug 100>50; // true
+// @debug 10px < 17px; // true
+// @debug 96px>=1in; // true
+// @debug 1000ms <=1s; // true
+
+// //Arithmetic operator
+
+// @debug 10s+15s; // 25s
+// @debug 1in - 10px; // 0.8958333333in
+// @debug 5px * 3px; // 15px*px
+// @debug 1in % 9px; // 0.0625in
+
+// //String Operator
+
+// @debug "Helvetica"+" Neue"; // "Helvetica Neue"
+// @debug sans-+serif; // sans-serif
+// @debug sans - serif; // sans-serif
+// @debug "Elapsed time: "+10s; // "Elapsed time: 10s";
+// @debug true+" is a boolean value"; // "true is a boolean value";
+
+// //Order of Operations 
+// @debug 1+2 * 3==1+(2 * 3); // true
+// @debug true or false and false==true or (false and false); // true
+
+
+//SASS if-else
+
+.ifelse-textcolor {
+
+    $text-limit : 5;
+
+    @if $text-limit <=3 {
+        color: red;
+    }
+
+    @else if $text-limit >3 and $text-limit <=6 {
+        color: orange;
+    }
+
+    @else if $text-limit >6 and $text-limit <=9 {
+        color: blue;
+    }
+
+    @else {
+        color: green;
+    }
+}
+
+.ifelse-exerc {
+    display: flex;
+    align-items: center;
+
+    img {
+        padding-right: 20px;
+    }
+}
+
+
+
+@mixin avatar($size, $circle: false) {
+    width: $size;
+    height: $size;
+
+    @if $circle {
+        border-radius: math.div($size, 2);
+    }
+}
+
+.square-av {
+    @include avatar(400px);
+}
+
+.circle-av {
+    @include avatar(100px, $circle: true);
+}
+
+
+//SASS @for loop
+
+.for-style {
+    @for $i from 1 through 6 {
+
+        @debug "result: h#{$i}";
+
+        h#{$i} {
+            font-size: 10px * $i;
+            color: rgb(random(255), random(255), random(255));
+        }
+    }
+}
+
+
+
+//SASS @each loop
+
+.each-style {
+    $spacing-list: 1,
+    2,
+    3,
+    4,
+    5,
+    6;
+    $direction-list : top, right, bottom, left;
+
+    @each $incre in $spacing-list {
+        .m-#{$incre} {
+            margin: #{$incre}rem; //1rem = 16px;
+            border: 1px solid red;
+        }
+
+        .p-#{$incre} {
+            padding: #{$incre}rem; //1rem = 16px;
+            border: 1px solid red;
+        }
+
+        @each $direction in $direction-list {
+            .m#{str-slice($direction, 0, 1)}-#{$incre} {
+                margin-#{$direction}: #{$incre}rem !important;
+            }
+
+            .p#{str-slice($direction, 0, 1)}-#{$incre} {
+                padding-#{$direction}: #{$incre}rem !important;
+            }
+        }
+    }
+
+}
+
+
+//SASS @while loop
+
+$count-while: 1;
+
+@while $count-while < 10 {
+    h#{$count-while} {
+        font-size: 10px * $count-while;
+    }
+
+    $count-while: $count-while + 1;
+}
